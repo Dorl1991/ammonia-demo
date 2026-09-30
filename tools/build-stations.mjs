@@ -51,8 +51,8 @@ for (const st of stationMap.stations) {
       writeFileSync(localPath, buf);
     }
     // Replace both quoted-src and url(...) occurrences of this exact URL.
-    html = html.split(`"${url}"`).join(`"/assets/${localName}"`);
-    html = html.split(url).join(`/assets/${localName}`);
+    html = html.split(`"${url}"`).join(`"../../assets/${localName}"`);
+    html = html.split(url).join(`../../assets/${localName}`);
   }
 
   await page.close();
@@ -69,13 +69,13 @@ for (const st of stationMap.stations) {
   html = html.replace(/<link[^>]*fonts\.gstatic\.com[^>]*>/g, '');
   html = html.replace(
     /<\/head>/,
-    `<link rel="stylesheet" href="/fonts/fonts.css">\n<style>${harvestedCss}</style>\n</head>`
+    `<link rel="stylesheet" href="../../fonts/fonts.css">\n<style>${harvestedCss}</style>\n</head>`
   );
 
   // Inject station number + bridge script before </body>
   html = html.replace(
     /<\/body>/,
-    `<script>window.__STATION_NUM__ = ${st.n};</script>\n<script type="module" src="/bridge.js"></script>\n</body>`
+    `<script>window.__STATION_NUM__ = ${st.n};</script>\n<script type="module" src="../../bridge.js"></script>\n</body>`
   );
 
   const outDir = join(stationsOutDir, nn);

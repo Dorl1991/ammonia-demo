@@ -13,7 +13,7 @@ function stationNN(n) { return String(n).padStart(2, '0'); }
 function getOrCreateIframe(n) {
   if (iframes.has(n)) return iframes.get(n);
   const iframe = document.createElement('iframe');
-  iframe.src = `/stations/${stationNN(n)}/index.html`;
+  iframe.src = `./stations/${stationNN(n)}/index.html`;
   iframe.setAttribute('title', stationMap[n] || `תחנה ${n}`);
   iframe.style.display = 'none';
   viewport.appendChild(iframe);

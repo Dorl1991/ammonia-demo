@@ -7,7 +7,7 @@
 //  3. Run this station's specific interaction init (see station-configs.js),
 //     which resets any "answered example" demo state to neutral and wires
 //     real answer validation reusing each station's own visual language.
-import { STATION_INIT } from '/station-configs.js';
+import { STATION_INIT } from './station-configs.js';
 
 const STATION_NUM = window.__STATION_NUM__;
 
