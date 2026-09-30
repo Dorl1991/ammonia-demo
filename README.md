@@ -4,6 +4,12 @@ A pixel-faithful, fully interactive demo app built from the 48-station Stitch
 project "midAmo" — a Hebrew (RTL) mobile safety-training lesson about ammonia
 in a factory refrigeration system.
 
+**Live demo:** https://dorl1991.github.io/ammonia-demo/
+(source: https://github.com/Dorl1991/ammonia-demo, deployed free via GitHub
+Pages from the `gh-pages` branch; `main` holds the editable source. To
+redeploy after a change: `npm run build`, then copy `dist/` onto the
+`gh-pages` branch and push.)
+
 ## How to run (Windows / PowerShell)
 
 ```powershell
